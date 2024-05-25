@@ -97,6 +97,7 @@ Agora precisamos analisar outro ponto crítico do código, que é quando o valor
 ### Testes Parametrizados
 
 No item anterior foi mostrado como criar baterias de teste para um método que recebe um valor e devolve um valor. Neste item vamos estudar como reduzir a verbosidade do código. Em seis dos sete métodos de testes o assertEquals recebe variáveis do tipo Double, indicando que está sendo testado um intervalo. Podemos substituir esses seis métodos por um código reduzido:
+
 	private Desconto desconto = new Desconto();
 	
 	@ParameterizedTest
