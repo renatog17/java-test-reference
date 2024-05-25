@@ -34,3 +34,36 @@ public class DescontoTest {
 	
 }
 ```
+
+A classe Desconto possue um método retornarPrecoComDesconto(Double precoCompra), que será o método utilizado neste material para implementação dos testes unitários.
+
+Ao analisar o único parâmetro de entrada deste método ```precoCompra``` é possível estipular quais são os limites que esta variável vai suportar e os intervalos mais críticos para teste. Uma compra não pode ter valor negativo, logo, o valor sempre será maior que 0. Então é importante analisar o comportamento deste método com valores negativos, iguais a zeros, e baixos, mas superiores a zero.
+
+
+Temos então os seguintes métodos de teste:
+
+	@BeforeEach
+	public void setUp() {
+		desconto = new Desconto();
+	}
+	
+	@Test
+	public void testePracoValorNegativoExcecao() {
+	    assertThrows(IllegalArgumentException.class, ()->{
+	    	desconto.retornarPrecoComDesconto(-1.0);
+	    }) ;
+	}
+	
+	@Test
+	public void testePrecoIgualAZero() {
+		Double preco = desconto.retornarPrecoComDesconto(0.0);
+		assertEquals(Double.valueOf(0.0), preco);
+	}
+	
+	@Test
+	public void testePrecoValorMuitoBaixo() {
+		Double preco = desconto.retornarPrecoComDesconto(0.05);
+		assertEquals(Double.valueOf(0.05), preco);
+	}
+
+Agora precisamos analisar outro ponto crítico do código, que é quando o valor for superior a 30. Devemos aplicar os mesmo raciocínio e testar o preco igual a um valor abaixo de 30, igual a 30 e superior a 30.
