@@ -9,3 +9,7 @@ Para escrever testes unitários, diversas linguagens dispõe de seus próprios f
 Testes de unidade, são essenciais para testar unidades isoladas de um código. Essas unidades, em Java, podem ser métodos. A característica primordial deste tipo de teste é garantir que partes isoladas do código estão funcionam bem e que continuarão funcionando após a implementação de novos métodos.
 
 ### Escrevendo Testes Unitários
+
+A criação de testes segue um padrão onde uma determinada classe, que possue métodos a serem testados, terá uma respectiva classe de teste. A nomenclatura pode seguir o seguinte padrão:
+* ``` <<nome_da_classe>> ```: nome da classe; 
+* ``````<<nome_da_classe>>Test```: classe de testes.
