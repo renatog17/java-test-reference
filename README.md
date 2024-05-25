@@ -14,7 +14,7 @@ A criação de testes segue um padrão onde uma determinada classe, que possue m
 * ``` <<nome_da_classe>> ```: nome da classe; 
 * ```<<nome_da_classe>>Test```: classe de testes.
 
-Esta nomenclatura pode ser vista a seguir:
+Esta nomenclatura pode ser vista a seguir, nas classes Desconto e DescontoTest:
 ```
 public class Desconto {
 	public Double retornarPrecoComDesconto(Double precoCompra) {
