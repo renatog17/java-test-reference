@@ -13,3 +13,24 @@ Testes de unidade, são essenciais para testar unidades isoladas de um código. 
 A criação de testes segue um padrão onde uma determinada classe, que possue métodos a serem testados, terá uma respectiva classe de teste. A nomenclatura pode seguir o seguinte padrão:
 * ``` <<nome_da_classe>> ```: nome da classe; 
 * ```<<nome_da_classe>>Test```: classe de testes.
+
+Esta nomenclatura pode ser vista a seguir:
+```
+public class Desconto {
+	public Double retornarPrecoComDesconto(Double precoCompra) {
+		if (precoCompra < 0.0) {
+			throw new IllegalArgumentException("O preço da compra não pode ser negativo.");
+		}
+		if (precoCompra >= 30.0) {
+			precoCompra = precoCompra - (precoCompra * 0.10);
+		}
+		return precoCompra;
+	}
+}
+```
+
+```
+public class DescontoTest {
+	
+}
+```
