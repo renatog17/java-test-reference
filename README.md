@@ -66,4 +66,30 @@ Temos então os seguintes métodos de teste:
 		assertEquals(Double.valueOf(0.05), preco);
 	}
 
-Agora precisamos analisar outro ponto crítico do código, que é quando o valor for superior a 30. Devemos aplicar os mesmo raciocínio e testar o preco igual a um valor abaixo de 30, igual a 30 e superior a 30.
+Agora precisamos analisar outro ponto crítico do código, que é quando o valor for próximo a 30. Devemos aplicar os mesmo raciocínio e testar o preco igual a um valor abaixo de 30, igual a 30 e superior a 30.
+
+	@Test
+	public void testePrecoAbaixoDoLimiteDoDesconto() {
+		Double preco = desconto.retornarPrecoComDesconto(29.99999);
+		assertEquals(Double.valueOf(29.99999), preco);
+	}
+	
+	@Test
+	public void testePrecoExatamenteNoLimiteDoDesconto() {
+		Double preco =  desconto.retornarPrecoComDesconto(30.0);
+		assertEquals(Double.valueOf(27.0), preco);
+	}	
+	
+	@Test
+	public void testePrecoAcimaDoLimiteDoDesconto() {
+		Double preco = desconto.retornarPrecoComDesconto(30.01);
+		assertEquals(Double.valueOf(27.009), preco);
+	}
+
+ Por fim, devemos analisar os limites mais altos que podem ser recebidos como entrada. Para a regra de negócio vamos considerar que o valor máximo possível é R$900,00. 
+
+ 	@Test
+	public void testePrecoMuitoAlto() {
+		Double preco = desconto.retornarPrecoComDesconto(1000.0);
+		assertEquals(Double.valueOf(900.0), preco);
+	}
