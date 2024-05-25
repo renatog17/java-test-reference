@@ -86,7 +86,7 @@ Agora precisamos analisar outro ponto crítico do código, que é quando o valor
 		assertEquals(Double.valueOf(27.009), preco);
 	}
 
- Por fim, devemos analisar os limites mais altos que podem ser recebidos como entrada. Para a regra de negócio vamos considerar que o valor máximo possível é R$900,00. 
+ Por fim, devemos analisar os limites mais altos que podem ser recebidos como entrada. Para a regra de negócio vamos considerar que o valor máximo possível é R$1000,00. 
 
  	@Test
 	public void testePrecoMuitoAlto() {
